@@ -1,0 +1,52 @@
+site_name: hp-adoption
+repo_url: https://github.com/switchbox-data/hp-adoption
+site_url: https://switchbox-data.github.io/hp-adoption
+site_description: This repositary contains code for modeling residential heat pump adoption in the United States
+site_author: Switchbox
+edit_uri: edit/main/docs/
+repo_name: switchbox-data/hp-adoption
+copyright: Maintained by <a href="https://switchbox-data.com">switchbox-data</a>.
+
+nav:
+  - Home: index.md
+  - Modules: modules.md
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: ["hp_adoption"]
+theme:
+  name: material
+  feature:
+    tabs: true
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: white
+      accent: deep orange
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: deep orange
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  icon:
+    repo: fontawesome/brands/github
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/switchbox-data/hp-adoption
+    - icon: fontawesome/brands/python
+      link: https://pypi.org/project/hp-adoption
+
+markdown_extensions:
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
