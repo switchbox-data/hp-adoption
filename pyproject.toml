@@ -6,6 +6,12 @@ authors = [{ name = "Switchbox", email = "dk@switch.box" }]
 readme = "README.md"
 keywords = ['python']
 requires-python = ">=3.9,<4.0"
+dependencies = [
+    "jupyter>=1.0.0",
+    "jupyterlab>=4.0.0",
+    "ipykernel>=6.0.0",
+    "notebook>=7.0.0",
+]
 classifiers = [
     "Intended Audience :: Developers",
     "Programming Language :: Python",

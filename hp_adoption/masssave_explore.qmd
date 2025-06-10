@@ -1,0 +1,14 @@
+---
+jupyter: python3
+title: "MassSave Exploration"
+---
+
+```{python}
+import pandas as pd
+import numpy as np
+```
+
+```{python}
+df = pd.read_csv("/workspaces/hp-adoption/.scratch/masssave_hpreport_20250609.csv")
+print(df)
+```
