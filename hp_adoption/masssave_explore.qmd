@@ -6,9 +6,67 @@ title: "MassSave Exploration"
 ```{python}
 import pandas as pd
 import numpy as np
+import re
+import glob
 ```
 
 ```{python}
-df = pd.read_csv("/workspaces/hp-adoption/.scratch/masssave_hpreport_20250609.csv")
+df = pd.read_excel("/workspaces/hp-adoption/local_data/hvac_2023_retrofit_propane.xlsx")
+df.columns = ["municipality","installed_hp_accounts","intalled_hp_locations"]
+df = df.set_index("municipality")
 print(df)
+```
+
+```{python}
+def read_and_clean_masssave_data(file_path):
+    print(file_path)
+    df = pd.read_excel(file_path)
+    df.columns = ["municipality","installed_hp_accounts","installed_hp_locations"]
+    df = df.set_index("municipality")
+    df = df.replace("*",np.nan) # todo, maybe some other sentinal here for "present but below threshold"
+
+    fileyear = re.search(r'\d{4}', file_path).group(0)
+    displaced_fuel = re.search(r'propane|electric|gas|oil|nodisplacement', file_path).group(0)
+    applied_filters = df.index[-1].lower().replace("no displacement","nodisplacement")
+
+    # assert that filename matches the filters in the file
+    assert f"year is {fileyear}" in applied_filters, f"Year {fileyear} does not match the year in the filename"
+    assert f"displaced_fuel is {displaced_fuel}" in applied_filters, f"Displaced fuel {displaced_fuel} does not match the displaced fuel in the filename"
+    assert np.isnan(df.index[-2]), "2nd to last row should be NaN"
+
+    df["year"] = fileyear
+    df["displaced_fuel"] = displaced_fuel
+
+    df = df.reset_index().set_index(["municipality","year","displaced_fuel"])
+    df = df.iloc[:-2] # drop the last rows, which are the applied filters and a NaN col
+
+    return df
+
+df = read_and_clean_masssave_data("/workspaces/hp-adoption/local_data/hvac_2022_retrofit_nodisplacement.xlsx")
+print(df)
+```
+
+```{python}
+# read all the xlsx files in local_data folder that start with hvac_ using read_and_clean_masssave_data
+# and concatenate them into a single dataframe
+
+# get all the xlsx files in local_data folder that start with hvac_
+files = glob.glob("/workspaces/hp-adoption/local_data/hvac_*.xlsx")
+
+# read and clean each file
+dfs = [read_and_clean_masssave_data(file) for file in files]
+
+# concatenate the dataframes
+df = pd.concat(dfs)
+
+# save the dataframe to a csv file
+df.to_csv("/workspaces/hp-adoption/local_data/masssave_hvac_data.csv", index=True)
+```
+
+```{python}
+df.xs("Total",level="municipality")["installed_hp_locations"].unstack()
+```
+
+```{python}
+df.query("municipality != 'Total'").groupby(["year","displaced_fuel"]).sum()["installed_hp_locations"].unstack()
 ```
