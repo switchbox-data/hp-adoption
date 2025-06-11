@@ -115,8 +115,8 @@ ignore = [
 [tool.ruff.format]
 preview = true
 
-[tool.deptry]
-ignore = [
+[tool.deptry.per_rule_ignores]
+DEP002 = [
     "jupyter",
     "jupyterlab",
     "ipykernel",
