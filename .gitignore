@@ -1,5 +1,8 @@
 docs/source
 
+# current workaround until we get S3 data storage working
+local_data/
+
 # From https://raw.githubusercontent.com/github/gitignore/main/Python.gitignore
 
 # Byte-compiled / optimized / DLL files
