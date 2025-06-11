@@ -114,3 +114,12 @@ ignore = [
 
 [tool.ruff.format]
 preview = true
+
+[tool.deptry]
+ignore = [
+    "jupyter",
+    "jupyterlab",
+    "ipykernel",
+    "notebook",
+    "pandas",
+]
