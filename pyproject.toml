@@ -7,11 +7,9 @@ readme = "README.md"
 keywords = ['python']
 requires-python = ">=3.10,<4.0"
 dependencies = [
-    "jupyter>=1.0.0",
-    "jupyterlab>=4.0.0",
-    "ipykernel>=6.0.0",
-    "notebook>=7.0.0",
     "pandas>=2.3.0",
+    "requests>=2.32.3",
+    "attrs>=25.3.0",
 ]
 classifiers = [
     "Intended Audience :: Developers",
@@ -32,6 +30,10 @@ Documentation = "https://switchbox-data.github.io/hp-adoption/"
 
 [dependency-groups]
 dev = [
+    "jupyter>=1.0.0",
+    "jupyterlab>=4.0.0",
+    "ipykernel>=6.0.0",
+    "notebook>=7.0.0",
     "pytest>=7.2.0",
     "pre-commit>=2.20.0",
     "tox-uv>=1.11.3",
@@ -116,11 +118,11 @@ ignore = [
 [tool.ruff.format]
 preview = true
 
-[tool.deptry.per_rule_ignores]
-DEP002 = [
-    "jupyter",
-    "jupyterlab",
-    "ipykernel",
-    "notebook",
-    "pandas",
-]
+# [tool.deptry.per_rule_ignores]
+# DEP002 = [
+#     "jupyter",
+#     "jupyterlab",
+#     "ipykernel",
+#     "notebook",
+#     "pandas",
+# ]
