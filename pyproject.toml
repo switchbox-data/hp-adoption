@@ -5,7 +5,7 @@ description = "This repositary contains code for modeling residential heat pump 
 authors = [{ name = "Switchbox", email = "dk@switch.box" }]
 readme = "README.md"
 keywords = ['python']
-requires-python = ">=3.9,<4.0"
+requires-python = ">=3.10,<4.0"
 dependencies = [
     "jupyter>=1.0.0",
     "jupyterlab>=4.0.0",
