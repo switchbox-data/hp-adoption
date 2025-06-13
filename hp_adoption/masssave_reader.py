@@ -13,6 +13,7 @@
 
 
 import json
+from typing import Any
 
 import pandas as pd
 import requests
@@ -60,7 +61,7 @@ class MassSaveFilter:
 
     @classmethod
     def show_columns(cls) -> list[str]:
-        return COLUMNS_TO_SOURCES.keys()  # todo, this should be stored in a nicer way
+        return list(COLUMNS_TO_SOURCES.keys())  # todo, this should be stored in a nicer way
 
     def to_dict(self) -> dict:
         match self.operator:
@@ -129,7 +130,7 @@ class MassSaveQuery:
             return ""
         return filters
 
-    def _create_query(self) -> str:
+    def _create_query(self) -> dict[str, Any]:
         query = {
             "Version": 2,
             "From": [
@@ -233,5 +234,7 @@ class MassSaveQuery:
             data = json.loads(content)
             return self.__class__._json_to_df(data) if return_type == "df" else data
         else:
+            # todo, this should be a proper error
             print(f"Error: {response.status_code}")
             print(response.text)
+            return {}
