@@ -4,30 +4,40 @@
     "name": "hp-adoption",
     // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
     "image": "mcr.microsoft.com/devcontainers/python:1-3.11-bullseye",
-    "features": {},
-    "runArgs": ["--user", "vscode"],
+    "features": {
+        // Install Quarto CLI
+        "ghcr.io/rocker-org/devcontainer-features/quarto-cli:1": {
+            "installChromium": true
+        },
+        // Install Chromium to render mermaid and graphviz diagrams in Quarto
+        "ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
+            "packages": "chromium"
+        }
+    },
 
     // Use 'postCreateCommand' to run commands after the container is created.
     "postCreateCommand": "./.devcontainer/postCreateCommand.sh",
 
-    // Configure tool-specific properties.
+    // Tell quarto to use Python interpreter in the uv virtual environment.
+    "containerEnv": {
+        "QUARTO_PYTHON": "/workspaces/hp-adoption/.venv/bin/python"
+    },
+
     "customizations": {
         "vscode": {
+            // Install VSCode extensions
             "extensions": [
                 "ms-python.python",
                 "editorconfig.editorconfig",
-                "jupyter.vscode-jupyter-notebook-extension-pack",
-                "quarto.quarto",
-                "ms-toolsai.jupyter"
+                "quarto.quarto"
             ],
+            // Configure tool-specific settings.
             "settings": {
                 "python.testing.pytestArgs": ["tests"],
                 "python.testing.unittestEnabled": false,
                 "python.testing.pytestEnabled": true,
                 "python.defaultInterpreterPath": "/workspaces/hp-adoption/.venv/bin/python",
                 "python.testing.pytestPath": "/workspaces/hp-adoption/.venv/bin/pytest",
-                "quarto.enabled": true,
-                "quarto.path": "/usr/local/bin/quarto",
             }
         }
     }
