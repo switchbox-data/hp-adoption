@@ -117,8 +117,7 @@ preview = true
 [tool.deptry.per_rule_ignores]
 DEP002 = [
     "jupyter",
-    "jupyterlab",
-    "ipykernel",
-    "notebook",
-    "pandas",
+    "polars",
+    "seaborn",
+    "pyarrow",
 ]
