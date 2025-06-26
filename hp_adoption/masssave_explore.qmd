@@ -4,46 +4,69 @@ title: "MassSave Exploration"
 ---
 
 ```{python}
-import pandas as pd
+import polars as pl
 import numpy as np
 import re
 import glob
 ```
 
 ```{python}
-df = pd.read_excel("/workspaces/hp-adoption/local_data/hvac_2023_retrofit_propane.xlsx")
-df.columns = ["municipality","installed_hp_accounts","intalled_hp_locations"]
-df = df.set_index("municipality")
+df = pl.read_excel("/workspaces/hp-adoption/local_data/hvac_2023_retrofit_propane.xlsx")
+df = df.select([
+    pl.col(df.columns[0]).alias("municipality"),
+    pl.col(df.columns[1]).alias("installed_hp_accounts"),
+    pl.col(df.columns[2]).alias("installed_hp_locations")
+])
 print(df)
 ```
 
 ```{python}
 def read_and_clean_masssave_data(file_path):
     print(file_path)
-    df = pd.read_excel(file_path)
-    df.columns = ["municipality","installed_hp_accounts","installed_hp_locations"]
-    df = df.set_index("municipality")
-    df = df.replace("*",np.nan) # todo, maybe some other sentinal here for "present but below threshold"
+    df = pl.read_excel(file_path)
+    df = df.select([
+        pl.col(df.columns[0]).alias("municipality"),
+        pl.col(df.columns[1]).alias("installed_hp_accounts"),
+        pl.col(df.columns[2]).alias("installed_hp_locations")
+    ])
 
     fileyear = re.search(r'\d{4}', file_path).group(0)
     displaced_fuel = re.search(r'propane|electric|gas|oil|nodisplacement', file_path).group(0)
-    applied_filters = df.index[-1].lower().replace("no displacement","nodisplacement")
+
+    # Get the last row for applied filters check
+    applied_filters = df.tail(1).select("municipality").item().lower().replace("no displacement","nodisplacement")
 
     # assert that filename matches the filters in the file
     assert f"year is {fileyear}" in applied_filters, f"Year {fileyear} does not match the year in the filename"
     assert f"displaced_fuel is {displaced_fuel}" in applied_filters, f"Displaced fuel {displaced_fuel} does not match the displaced fuel in the filename"
-    assert np.isnan(df.index[-2]), "2nd to last row should be NaN"
 
-    df["year"] = fileyear
-    df["displaced_fuel"] = displaced_fuel
+    # Drop the last row
+    df = df.head(-1)
 
-    df = df.reset_index().set_index(["municipality","year","displaced_fuel"])
-    df = df.iloc[:-2] # drop the last rows, which are the applied filters and a NaN col
+    # Replace "*" with null values
+    # Note, do this _after_ removing the null row
+    df = df.with_columns([
+        pl.col("installed_hp_accounts").replace("*", None).cast(pl.Float64, strict=False),
+        pl.col("installed_hp_locations").replace("*", None).cast(pl.Float64, strict=False)
+    ])
+
+    # Add year and displaced_fuel columns
+    df = df.with_columns([
+        pl.lit(fileyear).alias("year"),
+        pl.lit(displaced_fuel).alias("displaced_fuel")
+    ])
+
+
 
     return df
 
 df = read_and_clean_masssave_data("/workspaces/hp-adoption/local_data/hvac_2022_retrofit_nodisplacement.xlsx")
 print(df)
+```
+
+```{python}
+## show all rows of df that have non-null values
+df.filter(pl.col("installed_hp_locations").is_not_null())
 ```
 
 ```{python}
@@ -57,18 +80,30 @@ files = glob.glob("/workspaces/hp-adoption/local_data/hvac_*.xlsx")
 dfs = [read_and_clean_masssave_data(file) for file in files]
 
 # concatenate the dataframes
-df = pd.concat(dfs)
+df = pl.concat(dfs)
 
 # save the dataframe to a csv file
-df.to_csv("/workspaces/hp-adoption/local_data/masssave_hvac_data.csv", index=True)
+df.write_csv("/workspaces/hp-adoption/local_data/masssave_hvac_data.csv")
 ```
 
 ```{python}
-df.xs("Total",level="municipality")["installed_hp_locations"].unstack()
+# Filter for "Total" municipality and pivot to show installed_hp_locations by year and displaced_fuel
+df.filter(pl.col("municipality") == "Total").pivot(
+    values="installed_hp_locations",
+    index="displaced_fuel",
+    columns="year"
+)
 ```
 
 ```{python}
-df.query("municipality != 'Total'").groupby(["year","displaced_fuel"]).sum()["installed_hp_locations"].unstack()
+# Filter out "Total" municipality, group by year and displaced_fuel, sum installed_hp_locations, then pivot
+df.filter(pl.col("municipality") != "Total").group_by(["year", "displaced_fuel"]).agg(
+    pl.col("installed_hp_locations").sum().alias("installed_hp_locations")
+).pivot(
+    values="installed_hp_locations",
+    index="displaced_fuel",
+    columns="year"
+)
 ```
 
 
