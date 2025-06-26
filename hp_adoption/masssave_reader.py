@@ -15,7 +15,7 @@
 import json
 from typing import Any
 
-import pandas as pd
+import polars as pl
 import requests
 from attrs import define, field
 from attrs.validators import in_
@@ -205,7 +205,7 @@ class MassSaveQuery:
         }
 
     @staticmethod
-    def _json_to_df(data: dict) -> pd.DataFrame:
+    def _json_to_df(data: dict) -> pl.DataFrame:
         data_array = data["results"][0]["result"]["data"]["dsr"]["DS"][0]["PH"][1]["DM1"]
 
         # Create a list of dictionaries for each city
@@ -218,10 +218,10 @@ class MassSaveQuery:
                     "installed_hp_locations": int(item["C"][2].rstrip("L")),  # Remove 'L' and convert to int
                 })
 
-        # Create DataFrame
-        return pd.DataFrame(rows).set_index("municipality")
+        # Create DataFrame - keep municipality as a regular column
+        return pl.DataFrame(rows)
 
-    def run_query(self, token: str, return_type: str = "df") -> dict | pd.DataFrame:
+    def run_query(self, token: str, return_type: str = "df") -> dict | pl.DataFrame:
         headers = SHARED_HEADERS | {"authorization": f"EmbedToken {token}"}
 
         # Create and send the query
