@@ -13,7 +13,8 @@
         // Install Chromium to render mermaid and graphviz diagrams in Quarto
         "ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
             "packages": "chromium"
-        }
+        },
+        "ghcr.io/devcontainers/features/rust:1": {}
     },
 
     // Use 'postCreateCommand' to run commands after the container is created.

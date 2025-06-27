@@ -14,6 +14,7 @@
 ########################################################################################
 
 
+import asyncio
 import json
 from datetime import datetime
 from typing import Any
@@ -22,6 +23,7 @@ import polars as pl
 import requests
 from attrs import define, field
 from attrs.validators import in_
+from playwright.async_api import async_playwright
 
 SHARED_HEADERS = {
     "accept": "application/json, text/plain, */*",
@@ -243,6 +245,66 @@ class MassSaveQuery:
             return {}
 
 
+async def extract_auth_token():
+    """
+    h/t Claude
+    """
+    async with async_playwright() as p:
+        # Launch browser using system Chromium
+        browser = await p.chromium.launch(
+            executable_path="/usr/bin/chromium",
+            headless=True,
+        )
+        page = await browser.new_page()
+
+        # Store the authorization token
+        auth_token = None
+
+        # Listen for network requests to capture the token
+        async def handle_request(request):
+            nonlocal auth_token
+            if "querydata" in request.url.lower():
+                # print(f"Found queryData request: {request.url}")
+                headers = request.headers
+                if "authorization" in headers:
+                    auth_token = headers["authorization"]
+                    print(f"Found authorization token: {auth_token[:50]}...")
+                else:
+                    raise ValueError(  # noqa: TRY003
+                        f"No authorization header found in queryData request\nAvailable headers: {list(headers.keys())}"
+                    )
+
+        page.on("request", handle_request)
+
+        try:
+            # Navigate to the page
+            print("Navigating to the page...")
+            await page.goto("https://viewer.dnv.com/macustomerprofile/entity/1444/report/2078")
+
+            # Wait for page to load (using domcontentloaded instead of networkidle)
+            try:
+                await page.wait_for_load_state("domcontentloaded", timeout=10000)
+                # print("Page loaded successfully")
+            except Exception as e:
+                raise ValueError("Page load timeout") from e  # noqa: TRY003
+
+            # Wait for the queryData request to be made
+            # print("Waiting for network requests...")
+            await page.wait_for_timeout(15000)
+
+            if auth_token:
+                print(f"Successfully extracted authorization token: {auth_token}")
+                assert "EmbedToken" in auth_token, "Authorization token does not start with EmbedToken"  # noqa: S101
+                return auth_token.removeprefix("EmbedToken ")
+            else:
+                raise ValueError("Could not find authorization token in queryData requests")  # noqa: TRY003, TRY301
+
+        except Exception as e:
+            raise ValueError("Error") from e
+        finally:
+            await browser.close()
+
+
 if __name__ == "__main__":
     date = datetime.now().strftime("%Y%m%d")
     outfile = f"masssave_hpinstalls_{date}.csv"
@@ -250,13 +312,9 @@ if __name__ == "__main__":
     # TODO: add a way to get the token from the user
     msq = MassSaveQuery(filters=[MassSaveFilter(column="Heat_pump", values=["Energy efficiency"], operator="In")])
 
-    ### These expire in O(10s of mins); get fresh one from developer tools tab from a query in
-    ### https://viewer.dnv.com/macustomerprofile/entity/1444/report/2078
-    token = """
-    H4sIAAAAAAAEAB2Ut66EVgBE_-W1WCIsYbHkgrjknC4dOcOSg-V_97P7KY6OZubvHyu5-ynJf_782aA1xuRhUCPMfVn3J87SnGPGg7sg_d6_2idD63BBLc3YPNbwRF-MbzYFDxDUHV2pEUp5sctpnomrlsFdgysaArjJlO9i6QpNuJLwSH0dB0WMY_a5ueBUm8Pyi6eUi38LZn6qaTy782g-PMRmkczvRtpRQdtjYVVLl1Nw-sNMaOnPxrtNCRuvIrprxm31EYGXrdPPXYwGL83fXXmdz8IEsMU_QoqEJSryrHkHsz9ynWvUk1sLzoRmNxmerN8jqSdtdlPi4bUYDc9ejYo2aGuYPLdDGbV6HoXZ7zFiIrztG0rWMFSUh_tEEqXlvmsKF70czos5T3pLCyOJ6QwQgFL0ZQuSchPfzSljDEDsCUQDEtB7QE3TIZredvqvsUB5AGjKU7M3y1lVGyvnZh4cKiuFk_NweEwM_dgm0XRBZZaBqBNYjjDvBT9TtMg-BP9pzDtVpDYsBp4833EaZkK_lr7oB8-M8dpNM-nbj7VLGu7lTobWfulbI8_Yjk-VUmj26J8yVF4QJmol1dmXDTvfgOMZcO591FBIG2--U2xSQMZmlHZM3TOf2ML6uqpqz7-JjFIs5t3MWHJT4j0lKfwYwzfWdMTKfB4jBtJ9x9n57GGNyqJ07QUqJqLSTEJJVnCtIOvnOHcCK10Gl-58OT6eD1jtyJcsTSyMjT2XaTMrlLmbeSu5uEl6C6jChhEEwekJUiWS2RwIJaIygnfmumK054VXCh0vYu2lBBmLBBfAfHtfmxR0umyxb9fRtLOoEyCBZUzScRMk5O2BsG1G5gNJtexESJJvCox4rIaj-fIcuV0Or8jEN84eSMCI78X1R6NzL9rBNAM0ym87r1WqoaCoGdid7D6j-qPc1R3eE3NY0UDUds1ZoIhqJRcP8V1dFW9n_Y0tpxf4-eOHW-7vNqnF_TvHgGik1p8hfAJZK1aRjSYcsM-2Q8uMaxer2Y7TbkJ6KToVFmMTPYfGD-Y2PuEkfR2HjIdlFkvm0f4u2TIxGEJFrwMd8kyLJvI3B1kNMEYYC8W-e0wSuD7WNtQgGm_REQykzYSBpnjS_ARBVmGWLxiVI_6ySRnh2IEcTMFGPTXmKngetkIAZ5L5TviLgx5N2Y1j0icv9w2cDXv15TXMxIAMiEnTw-JVE4HEzJwQlRgZvz5RSJhCWcQWj4blM-ZTF5OD78zaeuY2lCfcqqF019uKhTV3cKb8yPH4RCkPbrJQ4CGz2S2nMqSlxkxNJim17othSMGoDsejlHwqiqgO3U_ByPz113-a729dLHLwa1nfbHGkk1ZZAkz6Zvgng_f8_D_lNtWYbPtS_MaMeTelQP-9uI6t40hbbquoxEd7dYg7RP1gfufU_ggTxQk7zXk3xIsUFWMj-dF-IXOr8u6JWJuTPKY6nHQtlBtbLasOsqIPyg9CcfcnS4fOfm13i79pmqzQR8UXV_G-7dcBrTag8lACge4HJ6ze6KqAQUnVkLXNxEOXqBakx1VCUT5NnCH3691vrX2kYR8FVJ2_dDiEh0N_53nwxLkDohJXVf4dFfqVcw5b6pI8-VdE9uU1pEJXzNT5MRVed2VW5FJf6l585A95Ka4uxAtHbEJ7dMtV1kDbI5mAliCyWvdtkZwCyMNq435fo7kO8I6EYju4_Lpl-v5bQFPIMclH4H06S-1fzf_8CxpVXNWCBgAA.eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly9XQUJJLU5PUlRILUVVUk9QRS1FLVBSSU1BUlktcmVkaXJlY3QuYW5hbHlzaXMud2luZG93cy5uZXQiLCJleHAiOjE3NTA5NTY0ODksInByaXZhdGVMaW5rc0VuYWJsZWQiOnRydWUsImFsbG93QWNjZXNzT3ZlclB1YmxpY0ludGVybmV0Ijp0cnVlfQ==
-    """  # noqa: S105
+    auth_token = asyncio.run(extract_auth_token())
 
     # TODO: run all permutations of filters and concat
-    data = msq.run_query(token)
+    data = msq.run_query(auth_token)
 
     data.write_csv(outfile)
