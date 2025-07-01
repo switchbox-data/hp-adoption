@@ -473,9 +473,6 @@ if __name__ == "__main__":
         "End use": ["Hot Water", "HVAC"],
         "Rate_category": ["Market rate", "Income eligible"],
     }
-    filter_sets = {
-        "Year": ["2019"],
-    }
 
     filter_cols = [s.lower().replace(" ", "_") for s in filter_sets]
 
@@ -502,3 +499,7 @@ if __name__ == "__main__":
 
     data = pl.concat(dfs).sort(filter_cols).select(*[pl.col(s) for s in filter_cols], pl.all().exclude(filter_cols))
     data.write_csv(outfile)
+
+
+# TODO: TESTS!
+# TODO: This doesn't *quite* line up with website (see, Yarmouth 2019), but that's maybe a suppression thing?
