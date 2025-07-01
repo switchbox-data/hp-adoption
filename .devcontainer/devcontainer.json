@@ -31,7 +31,8 @@
             "extensions": [
                 "ms-python.python",
                 "quarto.quarto",
-                "tamasfe.even-better-toml"
+                "tamasfe.even-better-toml",
+                "ms-toolsai.jupyter",
             ],
             // Configure tool-specific settings.
             "settings": {

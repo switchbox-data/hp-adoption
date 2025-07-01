@@ -125,3 +125,17 @@ data = msq.run_query(token)
 
 print(data)
 ```
+
+```{python}
+    import polars as pl
+    data = pl.read_csv("/workspaces/hp-adoption/data/ma/masssave_hpinstalls_20250701.csv")
+    filter_sets = {
+        "Year": ["2019", "2020", "2021", "2022", "2023"],
+        # "Displaced_fuel": ["No displacement", "Electric","Gas","Oil","Propane","Other"],
+        "End use": ["Hot Water", "HVAC"],
+        # "Rate_category": ["Market rate", "Income eligible"],
+    }
+    filter_cols = [s for s in filter_sets.keys()]
+
+    data.sort(filter_cols).select(*[pl.col(s) for s in filter_cols], pl.all().exclude(filter_cols))
+```
