@@ -1,0 +1,1031 @@
+year,end_use,municipality,installed_hp_accounts,installed_hp_locations
+2019,HVAC,Abington,19,19
+2019,HVAC,Acton,70,71
+2019,HVAC,Acushnet,19,19
+2019,HVAC,Adams,4,4
+2019,HVAC,Agawam,39,39
+2019,HVAC,Alford,2,2
+2019,HVAC,Amesbury,19,19
+2019,HVAC,Amherst,111,109
+2019,HVAC,Andover,81,82
+2019,HVAC,Aquinnah,3,3
+2019,HVAC,Arlington,156,149
+2019,HVAC,Ashfield,12,12
+2019,HVAC,Ashland,39,39
+2019,HVAC,Athol,43,43
+2019,HVAC,Attleboro,53,50
+2019,HVAC,Avon,5,5
+2019,HVAC,Ayer,27,24
+2019,HVAC,Barnstable,175,172
+2019,HVAC,Barre,9,9
+2019,HVAC,Becket,6,6
+2019,HVAC,Bedford,50,50
+2019,HVAC,Belchertown,61,60
+2019,HVAC,Bellingham,28,28
+2019,HVAC,Berlin,10,10
+2019,HVAC,Bernardston,11,11
+2019,HVAC,Beverly,69,69
+2019,HVAC,Billerica,41,41
+2019,HVAC,Blackstone,12,12
+2019,HVAC,Blandford,2,2
+2019,HVAC,Bolton,31,31
+2019,HVAC,Boston,410,369
+2019,HVAC,Bourne,90,90
+2019,HVAC,Boxford,22,22
+2019,HVAC,Brewster,108,108
+2019,HVAC,Bridgewater,15,15
+2019,HVAC,Brimfield,12,12
+2019,HVAC,Brockton,19,19
+2019,HVAC,Brookfield,9,9
+2019,HVAC,Brookline,51,51
+2019,HVAC,Buckland,13,13
+2019,HVAC,Burlington,42,43
+2019,HVAC,Cambridge,91,88
+2019,HVAC,Canton,110,30
+2019,HVAC,Carlisle,14,14
+2019,HVAC,Carver,19,19
+2019,HVAC,Charlemont,1,1
+2019,HVAC,Charlton,43,43
+2019,HVAC,Chatham,45,45
+2019,HVAC,Chelmsford,60,50
+2019,HVAC,Chelsea,1,1
+2019,HVAC,Cheshire,2,2
+2019,HVAC,Chesterfield,4,4
+2019,HVAC,Chilmark,9,9
+2019,HVAC,Clarksburg,1,1
+2019,HVAC,Clinton,46,46
+2019,HVAC,Cohasset,20,20
+2019,HVAC,Colrain,10,10
+2019,HVAC,Conway,19,19
+2019,HVAC,Cummington,4,4
+2019,HVAC,Dalton,15,7
+2019,HVAC,Dartmouth,77,77
+2019,HVAC,Dedham,43,42
+2019,HVAC,Dennis,138,129
+2019,HVAC,Dighton,8,8
+2019,HVAC,Douglas,34,34
+2019,HVAC,Dover,25,25
+2019,HVAC,Dracut,24,24
+2019,HVAC,Dudley,34,34
+2019,HVAC,Dunstable,11,11
+2019,HVAC,Duxbury,41,41
+2019,HVAC,East Bridgewater,25,25
+2019,HVAC,East Brookfield,5,5
+2019,HVAC,East Longmeadow,23,23
+2019,HVAC,Eastham,73,72
+2019,HVAC,Easthampton,80,80
+2019,HVAC,Easton,33,33
+2019,HVAC,Edgartown,37,37
+2019,HVAC,Egremont,12,12
+2019,HVAC,Erving,7,7
+2019,HVAC,Essex,12,12
+2019,HVAC,Everett,10,10
+2019,HVAC,Fairhaven,39,39
+2019,HVAC,Fall River,25,25
+2019,HVAC,Falmouth,179,179
+2019,HVAC,Foxborough,24,24
+2019,HVAC,Framingham,139,129
+2019,HVAC,Franklin,69,69
+2019,HVAC,Freetown,23,23
+2019,HVAC,Gardner,17,17
+2019,HVAC,Gill,14,14
+2019,HVAC,Gloucester,78,77
+2019,HVAC,Goshen,6,6
+2019,HVAC,Grafton,64,61
+2019,HVAC,Granby,24,24
+2019,HVAC,Granville,3,3
+2019,HVAC,Great Barrington,24,24
+2019,HVAC,Greenfield,61,61
+2019,HVAC,Hadley,35,35
+2019,HVAC,Halifax,9,9
+2019,HVAC,Hamilton,25,25
+2019,HVAC,Hampden,13,13
+2019,HVAC,Hancock,3,3
+2019,HVAC,Hanover,29,29
+2019,HVAC,Hanson,12,12
+2019,HVAC,Hardwick,8,8
+2019,HVAC,Harvard,34,34
+2019,HVAC,Harwich,80,80
+2019,HVAC,Hatfield,13,13
+2019,HVAC,Haverhill,37,37
+2019,HVAC,Hawley,2,2
+2019,HVAC,Hinsdale,1,1
+2019,HVAC,Holbrook,6,6
+2019,HVAC,Holland,9,9
+2019,HVAC,Holliston,69,70
+2019,HVAC,Hopedale,18,17
+2019,HVAC,Hopkinton,61,61
+2019,HVAC,Hubbardston,12,12
+2019,HVAC,Huntington,6,6
+2019,HVAC,Kingston,31,31
+2019,HVAC,Lakeville,4,4
+2019,HVAC,Lancaster,29,29
+2019,HVAC,Lanesborough,3,3
+2019,HVAC,Lawrence,4,4
+2019,HVAC,Lee,12,12
+2019,HVAC,Leicester,23,23
+2019,HVAC,Lenox,10,10
+2019,HVAC,Leominster,87,87
+2019,HVAC,Leverett,18,18
+2019,HVAC,Lexington,93,92
+2019,HVAC,Leyden,4,4
+2019,HVAC,Lincoln,22,23
+2019,HVAC,Longmeadow,49,49
+2019,HVAC,Lowell,53,48
+2019,HVAC,Ludlow,23,20
+2019,HVAC,Lynn,27,27
+2019,HVAC,Malden,42,42
+2019,HVAC,Manchester-By-The-Sea,17,17
+2019,HVAC,Marion,22,22
+2019,HVAC,Marlborough,72,72
+2019,HVAC,Marshfield,50,50
+2019,HVAC,Mashpee,62,62
+2019,HVAC,Mattapoisett,23,23
+2019,HVAC,Maynard,20,20
+2019,HVAC,Medfield,49,49
+2019,HVAC,Medford,63,62
+2019,HVAC,Medway,42,42
+2019,HVAC,Melrose,62,62
+2019,HVAC,Mendon,23,23
+2019,HVAC,Methuen,34,34
+2019,HVAC,Middlefield,1,1
+2019,HVAC,Milford,51,51
+2019,HVAC,Millbury,31,32
+2019,HVAC,Millis,35,35
+2019,HVAC,Millville,3,3
+2019,HVAC,Milton,48,48
+2019,HVAC,Monson,12,12
+2019,HVAC,Montague,36,36
+2019,HVAC,Monterey,5,5
+2019,HVAC,Nahant,6,6
+2019,HVAC,Nantucket,22,22
+2019,HVAC,Natick,101,101
+2019,HVAC,Needham,82,82
+2019,HVAC,New Bedford,44,38
+2019,HVAC,New Braintree,3,3
+2019,HVAC,New Marlborough,7,7
+2019,HVAC,Newbury,25,25
+2019,HVAC,Newburyport,47,46
+2019,HVAC,Newton,137,136
+2019,HVAC,Norfolk,48,48
+2019,HVAC,North Adams,2,2
+2019,HVAC,North Andover,41,41
+2019,HVAC,North Brookfield,11,11
+2019,HVAC,Northampton,132,129
+2019,HVAC,Northborough,51,51
+2019,HVAC,Northbridge,43,43
+2019,HVAC,Northfield,32,32
+2019,HVAC,Norton,20,20
+2019,HVAC,Norwell,22,22
+2019,HVAC,Oak Bluffs,27,27
+2019,HVAC,Oakham,8,8
+2019,HVAC,Orange,31,31
+2019,HVAC,Orleans,44,44
+2019,HVAC,Otis,9,9
+2019,HVAC,Oxford,46,45
+2019,HVAC,Palmer,25,25
+2019,HVAC,Pelham,21,20
+2019,HVAC,Pembroke,27,26
+2019,HVAC,Pepperell,24,24
+2019,HVAC,Peru,1,1
+2019,HVAC,Petersham,8,8
+2019,HVAC,Phillipston,3,3
+2019,HVAC,Pittsfield,21,21
+2019,HVAC,Plainfield,1,1
+2019,HVAC,Plainville,17,17
+2019,HVAC,Plymouth,185,185
+2019,HVAC,Plympton,3,3
+2019,HVAC,Provincetown,54,47
+2019,HVAC,Quincy,73,73
+2019,HVAC,Randolph,12,12
+2019,HVAC,Rehoboth,23,23
+2019,HVAC,Revere,16,16
+2019,HVAC,Richmond,3,3
+2019,HVAC,Rochester,13,13
+2019,HVAC,Rockland,12,12
+2019,HVAC,Rockport,50,49
+2019,HVAC,Rowe,2,2
+2019,HVAC,Royalston,1,1
+2019,HVAC,Rutland,25,25
+2019,HVAC,Salem,51,51
+2019,HVAC,Salisbury,9,9
+2019,HVAC,Sandisfield,6,6
+2019,HVAC,Sandwich,110,109
+2019,HVAC,Saugus,56,56
+2019,HVAC,Savoy,1,1
+2019,HVAC,Scituate,32,32
+2019,HVAC,Seekonk,24,24
+2019,HVAC,Sharon,30,31
+2019,HVAC,Sheffield,13,13
+2019,HVAC,Shelburne,12,12
+2019,HVAC,Sherborn,24,22
+2019,HVAC,Shirley,13,13
+2019,HVAC,Shutesbury,16,16
+2019,HVAC,Somerset,25,25
+2019,HVAC,Somerville,67,62
+2019,HVAC,South Hadley,1,1
+2019,HVAC,Southampton,22,22
+2019,HVAC,Southborough,48,49
+2019,HVAC,Southbridge,25,22
+2019,HVAC,Southwick,15,15
+2019,HVAC,Spencer,28,28
+2019,HVAC,Springfield,62,62
+2019,HVAC,Stockbridge,10,10
+2019,HVAC,Stoneham,39,38
+2019,HVAC,Stoughton,17,17
+2019,HVAC,Sturbridge,32,30
+2019,HVAC,Sudbury,68,68
+2019,HVAC,Sunderland,14,14
+2019,HVAC,Sutton,35,35
+2019,HVAC,Swampscott,22,22
+2019,HVAC,Swansea,23,23
+2019,HVAC,Tewksbury,43,43
+2019,HVAC,Tisbury,15,15
+2019,HVAC,Tolland,4,4
+2019,HVAC,Topsfield,17,17
+2019,HVAC,Truro,31,30
+2019,HVAC,Tyngsborough,28,28
+2019,HVAC,Tyringham,1,1
+2019,HVAC,Unknown,5,5
+2019,HVAC,Upton,33,33
+2019,HVAC,Uxbridge,40,40
+2019,HVAC,Wakefield,1,1
+2019,HVAC,Wales,8,8
+2019,HVAC,Walpole,45,46
+2019,HVAC,Waltham,56,56
+2019,HVAC,Ware,20,19
+2019,HVAC,Wareham,57,57
+2019,HVAC,Warren,8,8
+2019,HVAC,Warwick,5,5
+2019,HVAC,Watertown,25,24
+2019,HVAC,Wayland,60,60
+2019,HVAC,Webster,52,52
+2019,HVAC,Wellfleet,48,46
+2019,HVAC,Wendell,11,12
+2019,HVAC,West Bridgewater,12,12
+2019,HVAC,West Brookfield,8,8
+2019,HVAC,West Newbury,11,11
+2019,HVAC,West Springfield,27,26
+2019,HVAC,West Stockbridge,5,5
+2019,HVAC,West Tisbury,21,21
+2019,HVAC,Westborough,68,67
+2019,HVAC,Westford,48,48
+2019,HVAC,Westhampton,14,13
+2019,HVAC,Weston,21,21
+2019,HVAC,Westport,48,47
+2019,HVAC,Westwood,34,34
+2019,HVAC,Weymouth,51,51
+2019,HVAC,Whately,12,12
+2019,HVAC,Whitman,16,15
+2019,HVAC,Wilbraham,28,26
+2019,HVAC,Williamsburg,15,15
+2019,HVAC,Williamstown,10,10
+2019,HVAC,Winchendon,17,17
+2019,HVAC,Winchester,53,53
+2019,HVAC,Windsor,3,3
+2019,HVAC,Winthrop,15,13
+2019,HVAC,Woburn,47,47
+2019,HVAC,Worcester,111,109
+2019,HVAC,Worthington,3,3
+2019,HVAC,Wrentham,28,28
+2019,HVAC,Yarmouth,104,104
+2019,Hot Water,Abington,2,2
+2019,Hot Water,Acton,5,5
+2019,Hot Water,Adams,1,1
+2019,Hot Water,Agawam,7,7
+2019,Hot Water,Amesbury,2,2
+2019,Hot Water,Amherst,29,23
+2019,Hot Water,Andover,8,8
+2019,Hot Water,Arlington,4,4
+2019,Hot Water,Ashby,5,5
+2019,Hot Water,Ashfield,2,2
+2019,Hot Water,Ashland,5,5
+2019,Hot Water,Athol,16,14
+2019,Hot Water,Attleboro,12,12
+2019,Hot Water,Auburn,14,14
+2019,Hot Water,Ayer,7,7
+2019,Hot Water,Barre,4,4
+2019,Hot Water,Becket,1,1
+2019,Hot Water,Bedford,2,2
+2019,Hot Water,Belchertown,37,25
+2019,Hot Water,Bellingham,6,6
+2019,Hot Water,Bernardston,4,4
+2019,Hot Water,Beverly,5,5
+2019,Hot Water,Billerica,10,10
+2019,Hot Water,Blandford,3,3
+2019,Hot Water,Bolton,10,10
+2019,Hot Water,Boston,24,24
+2019,Hot Water,Bourne,12,11
+2019,Hot Water,Brewster,6,6
+2019,Hot Water,Bridgewater,7,7
+2019,Hot Water,Brimfield,6,6
+2019,Hot Water,Brockton,4,4
+2019,Hot Water,Brookfield,3,3
+2019,Hot Water,Brookline,1,1
+2019,Hot Water,Buckland,6,4
+2019,Hot Water,Burlington,2,2
+2019,Hot Water,Cambridge,1,1
+2019,Hot Water,Carver,5,5
+2019,Hot Water,Charlemont,1,1
+2019,Hot Water,Charlton,21,21
+2019,Hot Water,Chatham,2,2
+2019,Hot Water,Chelmsford,6,6
+2019,Hot Water,Chelsea,3,3
+2019,Hot Water,Cheshire,2,2
+2019,Hot Water,Clinton,4,4
+2019,Hot Water,Cohasset,3,3
+2019,Hot Water,Colrain,6,6
+2019,Hot Water,Conway,2,2
+2019,Hot Water,Dalton,3,3
+2019,Hot Water,Dartmouth,10,10
+2019,Hot Water,Dedham,1,1
+2019,Hot Water,Deerfield,5,5
+2019,Hot Water,Dennis,6,6
+2019,Hot Water,Dighton,3,3
+2019,Hot Water,Douglas,7,7
+2019,Hot Water,Dover,3,3
+2019,Hot Water,Dudley,8,8
+2019,Hot Water,Dunstable,1,1
+2019,Hot Water,Duxbury,2,2
+2019,Hot Water,East Bridgewater,5,5
+2019,Hot Water,East Brookfield,6,6
+2019,Hot Water,East Longmeadow,2,2
+2019,Hot Water,Eastham,9,9
+2019,Hot Water,Easton,8,8
+2019,Hot Water,Erving,1,1
+2019,Hot Water,Essex,2,2
+2019,Hot Water,Fall River,5,4
+2019,Hot Water,Falmouth,13,13
+2019,Hot Water,Fitchburg,59,58
+2019,Hot Water,Foxborough,5,5
+2019,Hot Water,Framingham,10,10
+2019,Hot Water,Franklin,9,9
+2019,Hot Water,Freetown,6,6
+2019,Hot Water,Gardner,16,14
+2019,Hot Water,Gloucester,7,6
+2019,Hot Water,Goshen,1,1
+2019,Hot Water,Grafton,10,10
+2019,Hot Water,Granby,8,8
+2019,Hot Water,Great Barrington,3,3
+2019,Hot Water,Greenfield,29,29
+2019,Hot Water,Hadley,8,8
+2019,Hot Water,Hamilton,3,3
+2019,Hot Water,Hampden,2,2
+2019,Hot Water,Hancock,1,1
+2019,Hot Water,Hanover,6,6
+2019,Hot Water,Hanson,2,2
+2019,Hot Water,Hardwick,3,3
+2019,Hot Water,Harvard,6,6
+2019,Hot Water,Harwich,5,5
+2019,Hot Water,Hatfield,1,1
+2019,Hot Water,Holbrook,7,7
+2019,Hot Water,Holland,3,3
+2019,Hot Water,Holliston,4,4
+2019,Hot Water,Hopkinton,5,5
+2019,Hot Water,Hubbardston,6,6
+2019,Hot Water,Lancaster,3,3
+2019,Hot Water,Lanesborough,2,2
+2019,Hot Water,Lawrence,1,1
+2019,Hot Water,Leicester,13,13
+2019,Hot Water,Lenox,1,1
+2019,Hot Water,Leominster,16,16
+2019,Hot Water,Leverett,5,5
+2019,Hot Water,Lexington,6,6
+2019,Hot Water,Lincoln,2,2
+2019,Hot Water,Longmeadow,1,1
+2019,Hot Water,Lowell,3,3
+2019,Hot Water,Ludlow,5,5
+2019,Hot Water,Lunenburg,39,39
+2019,Hot Water,Lynn,1,1
+2019,Hot Water,Malden,4,4
+2019,Hot Water,Marion,3,3
+2019,Hot Water,Marlborough,10,9
+2019,Hot Water,Marshfield,1,1
+2019,Hot Water,Mashpee,4,4
+2019,Hot Water,Maynard,1,1
+2019,Hot Water,Medford,2,2
+2019,Hot Water,Melrose,1,1
+2019,Hot Water,Mendon,7,7
+2019,Hot Water,Methuen,6,6
+2019,Hot Water,Milford,7,7
+2019,Hot Water,Millbury,14,14
+2019,Hot Water,Millis,4,4
+2019,Hot Water,Millville,2,2
+2019,Hot Water,Monson,3,3
+2019,Hot Water,Montague,10,10
+2019,Hot Water,Monterey,1,1
+2019,Hot Water,Nantucket,6,6
+2019,Hot Water,Natick,11,11
+2019,Hot Water,Needham,5,5
+2019,Hot Water,New Bedford,4,4
+2019,Hot Water,New Braintree,1,1
+2019,Hot Water,New Salem,2,2
+2019,Hot Water,Newbury,1,1
+2019,Hot Water,Newton,5,5
+2019,Hot Water,Norfolk,7,7
+2019,Hot Water,North Adams,1,1
+2019,Hot Water,North Andover,3,3
+2019,Hot Water,North Brookfield,4,4
+2019,Hot Water,Northampton,20,20
+2019,Hot Water,Northborough,8,8
+2019,Hot Water,Northfield,5,5
+2019,Hot Water,Norton,4,4
+2019,Hot Water,Norwell,9,9
+2019,Hot Water,Oak Bluffs,1,1
+2019,Hot Water,Oakham,5,5
+2019,Hot Water,Orange,11,11
+2019,Hot Water,Orleans,2,2
+2019,Hot Water,Otis,1,1
+2019,Hot Water,Oxford,13,13
+2019,Hot Water,Palmer,7,7
+2019,Hot Water,Pelham,1,1
+2019,Hot Water,Pembroke,7,7
+2019,Hot Water,Peru,1,1
+2019,Hot Water,Petersham,4,4
+2019,Hot Water,Phillipston,2,2
+2019,Hot Water,Pittsfield,15,15
+2019,Hot Water,Plainfield,1,1
+2019,Hot Water,Plainville,5,5
+2019,Hot Water,Plymouth,22,22
+2019,Hot Water,Plympton,2,2
+2019,Hot Water,Provincetown,1,1
+2019,Hot Water,Quincy,28,8
+2019,Hot Water,Randolph,6,6
+2019,Hot Water,Rehoboth,2,2
+2019,Hot Water,Richmond,1,1
+2019,Hot Water,Rochester,3,3
+2019,Hot Water,Rockland,2,2
+2019,Hot Water,Rockport,3,3
+2019,Hot Water,Rowe,1,1
+2019,Hot Water,Royalston,3,3
+2019,Hot Water,Russell,1,1
+2019,Hot Water,Rutland,4,4
+2019,Hot Water,Salem,5,5
+2019,Hot Water,Salisbury,1,1
+2019,Hot Water,Sandwich,5,5
+2019,Hot Water,Saugus,2,2
+2019,Hot Water,Savoy,1,1
+2019,Hot Water,Scituate,5,5
+2019,Hot Water,Seekonk,4,4
+2019,Hot Water,Sharon,3,3
+2019,Hot Water,Sheffield,1,1
+2019,Hot Water,Shelburne,2,2
+2019,Hot Water,Shirley,8,8
+2019,Hot Water,Shutesbury,3,3
+2019,Hot Water,Somerset,4,4
+2019,Hot Water,Southampton,3,3
+2019,Hot Water,Southborough,2,2
+2019,Hot Water,Southbridge,7,6
+2019,Hot Water,Southwick,5,5
+2019,Hot Water,Spencer,11,11
+2019,Hot Water,Springfield,19,19
+2019,Hot Water,Stoneham,1,1
+2019,Hot Water,Stoughton,5,5
+2019,Hot Water,Sturbridge,6,6
+2019,Hot Water,Sudbury,4,4
+2019,Hot Water,Sunderland,3,3
+2019,Hot Water,Sutton,10,10
+2019,Hot Water,Swampscott,1,1
+2019,Hot Water,Swansea,6,6
+2019,Hot Water,Tewksbury,1,1
+2019,Hot Water,Tisbury,3,3
+2019,Hot Water,Tolland,1,1
+2019,Hot Water,Townsend,21,21
+2019,Hot Water,Truro,2,2
+2019,Hot Water,Tyringham,1,1
+2019,Hot Water,Upton,8,8
+2019,Hot Water,Wales,2,2
+2019,Hot Water,Walpole,3,3
+2019,Hot Water,Ware,10,10
+2019,Hot Water,Wareham,4,4
+2019,Hot Water,Warren,3,3
+2019,Hot Water,Watertown,2,2
+2019,Hot Water,Wayland,8,8
+2019,Hot Water,Webster,12,12
+2019,Hot Water,Wellfleet,3,3
+2019,Hot Water,Wendell,1,1
+2019,Hot Water,West Brookfield,8,8
+2019,Hot Water,West Newbury,1,1
+2019,Hot Water,West Springfield,3,3
+2019,Hot Water,Westford,6,6
+2019,Hot Water,Westhampton,1,1
+2019,Hot Water,Westminster,3,3
+2019,Hot Water,Weston,1,1
+2019,Hot Water,Westport,5,5
+2019,Hot Water,Westwood,2,2
+2019,Hot Water,Weymouth,11,11
+2019,Hot Water,Whately,3,3
+2019,Hot Water,Wilbraham,6,6
+2019,Hot Water,Williamsburg,1,1
+2019,Hot Water,Williamstown,4,4
+2019,Hot Water,Winchendon,6,6
+2019,Hot Water,Winchester,4,4
+2019,Hot Water,Windsor,1,1
+2019,Hot Water,Woburn,2,2
+2019,Hot Water,Worcester,28,27
+2019,Hot Water,Worthington,3,3
+2019,Hot Water,Yarmouth,2,2
+2020,HVAC,Abington,24,23
+2020,HVAC,Acton,63,63
+2020,HVAC,Acushnet,17,18
+2020,HVAC,Adams,8,8
+2020,HVAC,Agawam,30,31
+2020,HVAC,Alford,2,2
+2020,HVAC,Amesbury,30,30
+2020,HVAC,Amherst,89,88
+2020,HVAC,Andover,100,99
+2020,HVAC,Aquinnah,4,4
+2020,HVAC,Arlington,158,149
+2020,HVAC,Ashby,7,7
+2020,HVAC,Ashfield,2,2
+2020,HVAC,Ashland,37,38
+2020,HVAC,Athol,28,28
+2020,HVAC,Attleboro,63,63
+2020,HVAC,Auburn,75,74
+2020,HVAC,Avon,7,7
+2020,HVAC,Ayer,16,16
+2020,HVAC,Barnstable,201,199
+2020,HVAC,Barre,16,16
+2020,HVAC,Becket,14,14
+2020,HVAC,Bedford,37,38
+2020,HVAC,Belchertown,64,63
+2020,HVAC,Bellingham,38,38
+2020,HVAC,Berlin,14,14
+2020,HVAC,Bernardston,11,12
+2020,HVAC,Beverly,78,77
+2020,HVAC,Billerica,56,56
+2020,HVAC,Blackstone,23,23
+2020,HVAC,Bolton,41,41
+2020,HVAC,Boston,321,278
+2020,HVAC,Bourne,84,82
+2020,HVAC,Boxford,25,25
+2020,HVAC,Brewster,117,117
+2020,HVAC,Bridgewater,28,28
+2020,HVAC,Brimfield,8,8
+2020,HVAC,Brockton,45,45
+2020,HVAC,Brookfield,9,9
+2020,HVAC,Brookline,69,58
+2020,HVAC,Buckland,10,11
+2020,HVAC,Burlington,45,46
+2020,HVAC,Cambridge,77,65
+2020,HVAC,Canton,21,22
+2020,HVAC,Carlisle,18,19
+2020,HVAC,Carver,24,25
+2020,HVAC,Charlemont,3,3
+2020,HVAC,Charlton,64,64
+2020,HVAC,Chelmsford,58,58
+2020,HVAC,Chelsea,6,5
+2020,HVAC,Cheshire,8,8
+2020,HVAC,Chesterfield,4,4
+2020,HVAC,Chilmark,14,14
+2020,HVAC,Clarksburg,2,2
+2020,HVAC,Clinton,41,41
+2020,HVAC,Cohasset,24,24
+2020,HVAC,Colrain,9,8
+2020,HVAC,Concord,1,1
+2020,HVAC,Conway,4,5
+2020,HVAC,Cummington,2,1
+2020,HVAC,Dalton,8,9
+2020,HVAC,Dartmouth,64,64
+2020,HVAC,Dedham,27,28
+2020,HVAC,Deerfield,23,24
+2020,HVAC,Dennis,157,151
+2020,HVAC,Dighton,15,15
+2020,HVAC,Douglas,36,36
+2020,HVAC,Dover,33,34
+2020,HVAC,Dracut,46,46
+2020,HVAC,Dudley,61,61
+2020,HVAC,Dunstable,17,17
+2020,HVAC,Duxbury,50,50
+2020,HVAC,East Bridgewater,16,16
+2020,HVAC,East Brookfield,11,11
+2020,HVAC,East Longmeadow,27,27
+2020,HVAC,Eastham,96,96
+2020,HVAC,Easthampton,63,62
+2020,HVAC,Easton,39,37
+2020,HVAC,Edgartown,55,55
+2020,HVAC,Egremont,10,10
+2020,HVAC,Essex,12,12
+2020,HVAC,Everett,11,11
+2020,HVAC,Fairhaven,31,30
+2020,HVAC,Fall River,40,40
+2020,HVAC,Falmouth,221,220
+2020,HVAC,Fitchburg,56,56
+2020,HVAC,Foxborough,26,26
+2020,HVAC,Framingham,116,108
+2020,HVAC,Franklin,91,91
+2020,HVAC,Freetown,25,26
+2020,HVAC,Gardner,28,28
+2020,HVAC,Gill,13,13
+2020,HVAC,Gloucester,89,89
+2020,HVAC,Goshen,2,2
+2020,HVAC,Grafton,83,82
+2020,HVAC,Granby,22,22
+2020,HVAC,Granville,1,1
+2020,HVAC,Great Barrington,25,25
+2020,HVAC,Greenfield,57,55
+2020,HVAC,Hadley,27,28
+2020,HVAC,Halifax,14,14
+2020,HVAC,Hamilton,35,35
+2020,HVAC,Hampden,12,12
+2020,HVAC,Hancock,3,3
+2020,HVAC,Hanover,25,25
+2020,HVAC,Hanson,21,21
+2020,HVAC,Hardwick,6,6
+2020,HVAC,Harvard,37,37
+2020,HVAC,Harwich,66,66
+2020,HVAC,Hatfield,17,18
+2020,HVAC,Haverhill,50,50
+2020,HVAC,Hawley,3,3
+2020,HVAC,Heath,2,2
+2020,HVAC,Hinsdale,4,5
+2020,HVAC,Holbrook,8,8
+2020,HVAC,Holland,14,13
+2020,HVAC,Holliston,51,52
+2020,HVAC,Hopedale,24,24
+2020,HVAC,Hopkinton,65,66
+2020,HVAC,Hubbardston,19,19
+2020,HVAC,Huntington,5,6
+2020,HVAC,Kingston,25,25
+2020,HVAC,Lakeville,2,2
+2020,HVAC,Lancaster,41,41
+2020,HVAC,Lanesborough,2,3
+2020,HVAC,Lawrence,10,10
+2020,HVAC,Leicester,36,36
+2020,HVAC,Lenox,11,11
+2020,HVAC,Leominster,127,127
+2020,HVAC,Leverett,12,13
+2020,HVAC,Lexington,72,67
+2020,HVAC,Leyden,3,4
+2020,HVAC,Lincoln,22,22
+2020,HVAC,Longmeadow,28,28
+2020,HVAC,Lowell,67,47
+2020,HVAC,Ludlow,12,12
+2020,HVAC,Lunenburg,33,33
+2020,HVAC,Lynn,39,38
+2020,HVAC,Malden,47,47
+2020,HVAC,Manchester-By-The-Sea,10,10
+2020,HVAC,Marion,8,8
+2020,HVAC,Marlborough,93,93
+2020,HVAC,Marshfield,48,49
+2020,HVAC,Mashpee,81,81
+2020,HVAC,Mattapoisett,18,18
+2020,HVAC,Medfield,38,38
+2020,HVAC,Medford,76,75
+2020,HVAC,Medway,57,57
+2020,HVAC,Melrose,94,94
+2020,HVAC,Mendon,41,41
+2020,HVAC,Methuen,58,58
+2020,HVAC,Millis,19,20
+2020,HVAC,Millville,7,7
+2020,HVAC,Milton,37,37
+2020,HVAC,Monson,25,25
+2020,HVAC,Montague,30,29
+2020,HVAC,Monterey,10,10
+2020,HVAC,Montgomery,4,5
+2020,HVAC,Mount Washington,1,1
+2020,HVAC,Nahant,6,6
+2020,HVAC,Nantucket,34,34
+2020,HVAC,Natick,98,97
+2020,HVAC,Needham,68,67
+2020,HVAC,New Bedford,43,44
+2020,HVAC,New Braintree,3,3
+2020,HVAC,New Salem,6,6
+2020,HVAC,Newbury,34,34
+2020,HVAC,Newburyport,58,56
+2020,HVAC,Newton,136,132
+2020,HVAC,Norfolk,47,48
+2020,HVAC,North Adams,10,10
+2020,HVAC,North Andover,49,49
+2020,HVAC,North Brookfield,17,17
+2020,HVAC,Northampton,122,117
+2020,HVAC,Northborough,80,80
+2020,HVAC,Northbridge,48,47
+2020,HVAC,Northfield,12,12
+2020,HVAC,Norton,33,33
+2020,HVAC,Norwell,28,28
+2020,HVAC,Oak Bluffs,41,40
+2020,HVAC,Oakham,12,13
+2020,HVAC,Orange,23,23
+2020,HVAC,Orleans,60,60
+2020,HVAC,Otis,14,14
+2020,HVAC,Oxford,47,47
+2020,HVAC,Palmer,29,29
+2020,HVAC,Pelham,10,11
+2020,HVAC,Pembroke,33,33
+2020,HVAC,Pepperell,26,26
+2020,HVAC,Petersham,14,13
+2020,HVAC,Phillipston,5,5
+2020,HVAC,Pittsfield,19,20
+2020,HVAC,Plainfield,2,2
+2020,HVAC,Plainville,12,12
+2020,HVAC,Plymouth,223,218
+2020,HVAC,Plympton,13,14
+2020,HVAC,Provincetown,62,50
+2020,HVAC,Quincy,69,67
+2020,HVAC,Randolph,18,18
+2020,HVAC,Rehoboth,22,22
+2020,HVAC,Revere,17,17
+2020,HVAC,Richmond,4,5
+2020,HVAC,Rochester,17,18
+2020,HVAC,Rockland,14,14
+2020,HVAC,Rockport,46,44
+2020,HVAC,Royalston,4,4
+2020,HVAC,Russell,2,2
+2020,HVAC,Rutland,27,27
+2020,HVAC,Salem,67,64
+2020,HVAC,Salisbury,20,20
+2020,HVAC,Sandisfield,3,3
+2020,HVAC,Sandwich,132,131
+2020,HVAC,Saugus,47,46
+2020,HVAC,Savoy,2,2
+2020,HVAC,Scituate,60,61
+2020,HVAC,Seekonk,29,29
+2020,HVAC,Sharon,32,33
+2020,HVAC,Sheffield,20,18
+2020,HVAC,Shelburne,3,4
+2020,HVAC,Sherborn,18,19
+2020,HVAC,Shirley,15,15
+2020,HVAC,Shutesbury,18,18
+2020,HVAC,Somerset,35,35
+2020,HVAC,Somerville,51,45
+2020,HVAC,Southampton,22,23
+2020,HVAC,Southborough,46,46
+2020,HVAC,Southbridge,24,24
+2020,HVAC,Southwick,14,15
+2020,HVAC,Spencer,37,36
+2020,HVAC,Springfield,47,46
+2020,HVAC,Stockbridge,4,4
+2020,HVAC,Stoneham,26,27
+2020,HVAC,Sturbridge,38,38
+2020,HVAC,Sudbury,62,63
+2020,HVAC,Sunderland,14,13
+2020,HVAC,Sutton,54,54
+2020,HVAC,Swampscott,32,32
+2020,HVAC,Swansea,29,29
+2020,HVAC,Tewksbury,59,59
+2020,HVAC,Tisbury,33,33
+2020,HVAC,Tolland,1,1
+2020,HVAC,Topsfield,29,29
+2020,HVAC,Townsend,11,11
+2020,HVAC,Truro,59,57
+2020,HVAC,Tyngsborough,23,23
+2020,HVAC,Unknown,44,1
+2020,HVAC,Upton,43,41
+2020,HVAC,Wales,5,5
+2020,HVAC,Walpole,38,39
+2020,HVAC,Waltham,48,48
+2020,HVAC,Ware,20,20
+2020,HVAC,Wareham,47,46
+2020,HVAC,Warren,5,5
+2020,HVAC,Warwick,7,7
+2020,HVAC,Washington,1,1
+2020,HVAC,Watertown,38,34
+2020,HVAC,Wayland,43,44
+2020,HVAC,Webster,53,53
+2020,HVAC,Wellfleet,85,85
+2020,HVAC,Wendell,6,6
+2020,HVAC,Wenham,22,22
+2020,HVAC,West Bridgewater,11,11
+2020,HVAC,West Brookfield,9,9
+2020,HVAC,West Newbury,16,16
+2020,HVAC,West Springfield,14,14
+2020,HVAC,West Stockbridge,6,6
+2020,HVAC,West Tisbury,20,20
+2020,HVAC,Westborough,77,76
+2020,HVAC,Westford,63,63
+2020,HVAC,Westhampton,7,8
+2020,HVAC,Westminster,42,41
+2020,HVAC,Weston,17,18
+2020,HVAC,Westport,37,37
+2020,HVAC,Westwood,34,35
+2020,HVAC,Weymouth,66,66
+2020,HVAC,Whately,3,4
+2020,HVAC,Whitman,15,15
+2020,HVAC,Wilbraham,45,45
+2020,HVAC,Williamsburg,13,13
+2020,HVAC,Williamstown,8,8
+2020,HVAC,Winchendon,14,14
+2020,HVAC,Winchester,40,41
+2020,HVAC,Windsor,3,4
+2020,HVAC,Winthrop,24,23
+2020,HVAC,Woburn,56,56
+2020,HVAC,Worcester,149,148
+2020,HVAC,Worthington,3,4
+2020,HVAC,Wrentham,47,47
+2020,HVAC,Yarmouth,107,105
+2020,Hot Water,Abington,2,2
+2020,Hot Water,Acton,7,7
+2020,Hot Water,Acushnet,3,3
+2020,Hot Water,Agawam,4,4
+2020,Hot Water,Amherst,13,13
+2020,Hot Water,Andover,7,7
+2020,Hot Water,Ashfield,2,2
+2020,Hot Water,Athol,19,18
+2020,Hot Water,Attleboro,10,10
+2020,Hot Water,Auburn,13,13
+2020,Hot Water,Ayer,4,4
+2020,Hot Water,Barnstable,15,15
+2020,Hot Water,Barre,2,2
+2020,Hot Water,Bedford,3,3
+2020,Hot Water,Belchertown,19,14
+2020,Hot Water,Bellingham,6,5
+2020,Hot Water,Bernardston,4,4
+2020,Hot Water,Beverly,3,3
+2020,Hot Water,Billerica,10,10
+2020,Hot Water,Blackstone,2,2
+2020,Hot Water,Boston,9,8
+2020,Hot Water,Bourne,2,2
+2020,Hot Water,Boxford,3,3
+2020,Hot Water,Brewster,7,7
+2020,Hot Water,Bridgewater,8,8
+2020,Hot Water,Brimfield,1,1
+2020,Hot Water,Brockton,9,9
+2020,Hot Water,Brookfield,2,2
+2020,Hot Water,Burlington,5,5
+2020,Hot Water,Cambridge,1,1
+2020,Hot Water,Carver,4,4
+2020,Hot Water,Charlemont,2,2
+2020,Hot Water,Charlton,11,11
+2020,Hot Water,Chatham,3,3
+2020,Hot Water,Chelmsford,2,2
+2020,Hot Water,Cheshire,3,3
+2020,Hot Water,Chesterfield,1,1
+2020,Hot Water,Clarksburg,2,2
+2020,Hot Water,Cohasset,1,1
+2020,Hot Water,Conway,2,2
+2020,Hot Water,Cummington,1,1
+2020,Hot Water,Dartmouth,5,5
+2020,Hot Water,Deerfield,2,2
+2020,Hot Water,Dennis,4,4
+2020,Hot Water,Dighton,1,1
+2020,Hot Water,Douglas,6,6
+2020,Hot Water,Dover,2,2
+2020,Hot Water,Dudley,3,3
+2020,Hot Water,Duxbury,2,2
+2020,Hot Water,East Bridgewater,3,3
+2020,Hot Water,East Longmeadow,1,1
+2020,Hot Water,Eastham,8,8
+2020,Hot Water,Easthampton,7,7
+2020,Hot Water,Easton,5,5
+2020,Hot Water,Edgartown,7,7
+2020,Hot Water,Erving,1,1
+2020,Hot Water,Fall River,7,7
+2020,Hot Water,Falmouth,12,12
+2020,Hot Water,Fitchburg,6,6
+2020,Hot Water,Florida,1,1
+2020,Hot Water,Foxborough,4,4
+2020,Hot Water,Framingham,6,6
+2020,Hot Water,Franklin,7,7
+2020,Hot Water,Gardner,10,10
+2020,Hot Water,Gill,3,3
+2020,Hot Water,Gloucester,4,4
+2020,Hot Water,Goshen,2,2
+2020,Hot Water,Grafton,5,5
+2020,Hot Water,Greenfield,16,15
+2020,Hot Water,Hadley,6,6
+2020,Hot Water,Hamilton,1,1
+2020,Hot Water,Hampden,2,2
+2020,Hot Water,Hanover,1,1
+2020,Hot Water,Hanson,5,5
+2020,Hot Water,Hardwick,1,1
+2020,Hot Water,Harvard,2,2
+2020,Hot Water,Harwich,3,3
+2020,Hot Water,Hatfield,1,1
+2020,Hot Water,Holbrook,4,4
+2020,Hot Water,Holland,6,6
+2020,Hot Water,Holliston,4,3
+2020,Hot Water,Hopedale,2,2
+2020,Hot Water,Hopkinton,3,3
+2020,Hot Water,Hubbardston,2,2
+2020,Hot Water,Huntington,1,1
+2020,Hot Water,Lancaster,3,3
+2020,Hot Water,Lanesborough,5,5
+2020,Hot Water,Leicester,4,4
+2020,Hot Water,Lenox,1,1
+2020,Hot Water,Leominster,5,5
+2020,Hot Water,Leverett,2,2
+2020,Hot Water,Lexington,10,10
+2020,Hot Water,Leyden,1,1
+2020,Hot Water,Longmeadow,4,4
+2020,Hot Water,Ludlow,6,6
+2020,Hot Water,Lunenburg,5,5
+2020,Hot Water,Lynn,1,1
+2020,Hot Water,Malden,4,4
+2020,Hot Water,Manchester-By-The-Sea,1,1
+2020,Hot Water,Marion,2,2
+2020,Hot Water,Marlborough,4,4
+2020,Hot Water,Marshfield,2,2
+2020,Hot Water,Mashpee,4,4
+2020,Hot Water,Mattapoisett,3,3
+2020,Hot Water,Maynard,7,4
+2020,Hot Water,Medfield,2,2
+2020,Hot Water,Mendon,1,1
+2020,Hot Water,Methuen,3,3
+2020,Hot Water,Middlefield,1,1
+2020,Hot Water,Milford,8,8
+2020,Hot Water,Millbury,10,10
+2020,Hot Water,Millis,3,3
+2020,Hot Water,Milton,1,1
+2020,Hot Water,Monson,4,4
+2020,Hot Water,Montague,8,8
+2020,Hot Water,Monterey,1,1
+2020,Hot Water,Natick,7,7
+2020,Hot Water,Needham,3,3
+2020,Hot Water,New Bedford,8,8
+2020,Hot Water,New Salem,1,1
+2020,Hot Water,Newbury,3,3
+2020,Hot Water,North Adams,5,5
+2020,Hot Water,North Andover,2,2
+2020,Hot Water,North Brookfield,6,6
+2020,Hot Water,Northampton,14,13
+2020,Hot Water,Northborough,9,9
+2020,Hot Water,Northbridge,12,12
+2020,Hot Water,Northfield,5,5
+2020,Hot Water,Norton,3,3
+2020,Hot Water,Norwell,5,5
+2020,Hot Water,Oak Bluffs,8,8
+2020,Hot Water,Oakham,2,2
+2020,Hot Water,Orange,8,8
+2020,Hot Water,Orleans,5,5
+2020,Hot Water,Oxford,7,7
+2020,Hot Water,Palmer,10,10
+2020,Hot Water,Pembroke,5,5
+2020,Hot Water,Pepperell,3,3
+2020,Hot Water,Petersham,5,5
+2020,Hot Water,Phillipston,2,2
+2020,Hot Water,Pittsfield,9,9
+2020,Hot Water,Plainville,3,3
+2020,Hot Water,Plymouth,13,12
+2020,Hot Water,Plympton,2,2
+2020,Hot Water,Provincetown,7,5
+2020,Hot Water,Randolph,3,3
+2020,Hot Water,Rehoboth,5,5
+2020,Hot Water,Revere,1,1
+2020,Hot Water,Rockland,2,2
+2020,Hot Water,Rowe,1,1
+2020,Hot Water,Rutland,3,3
+2020,Hot Water,Salem,7,7
+2020,Hot Water,Salisbury,1,1
+2020,Hot Water,Sandwich,5,5
+2020,Hot Water,Saugus,3,3
+2020,Hot Water,Scituate,5,5
+2020,Hot Water,Seekonk,7,7
+2020,Hot Water,Sharon,4,4
+2020,Hot Water,Sherborn,3,3
+2020,Hot Water,Shirley,6,6
+2020,Hot Water,Shutesbury,4,4
+2020,Hot Water,Somerset,2,2
+2020,Hot Water,South Hadley,1,1
+2020,Hot Water,Southampton,4,4
+2020,Hot Water,Southborough,3,3
+2020,Hot Water,Southbridge,4,4
+2020,Hot Water,Southwick,1,1
+2020,Hot Water,Spencer,14,14
+2020,Hot Water,Springfield,7,7
+2020,Hot Water,Stoneham,3,3
+2020,Hot Water,Stoughton,6,6
+2020,Hot Water,Sturbridge,8,8
+2020,Hot Water,Sudbury,2,2
+2020,Hot Water,Sunderland,1,1
+2020,Hot Water,Sutton,10,9
+2020,Hot Water,Swampscott,2,2
+2020,Hot Water,Swansea,3,3
+2020,Hot Water,Tewksbury,5,5
+2020,Hot Water,Tisbury,9,9
+2020,Hot Water,Tolland,1,1
+2020,Hot Water,Townsend,2,2
+2020,Hot Water,Truro,4,4
+2020,Hot Water,Unknown,1,1
+2020,Hot Water,Upton,4,4
+2020,Hot Water,Uxbridge,12,12
+2020,Hot Water,Walpole,2,2
+2020,Hot Water,Waltham,4,4
+2020,Hot Water,Ware,7,7
+2020,Hot Water,Wareham,5,5
+2020,Hot Water,Watertown,3,3
+2020,Hot Water,Wayland,2,2
+2020,Hot Water,Webster,12,11
+2020,Hot Water,Wellfleet,14,14
+2020,Hot Water,Wenham,1,1
+2020,Hot Water,West Brookfield,2,2
+2020,Hot Water,West Newbury,3,3
+2020,Hot Water,West Springfield,7,7
+2020,Hot Water,West Stockbridge,1,1
+2020,Hot Water,West Tisbury,9,9
+2020,Hot Water,Westborough,4,4
+2020,Hot Water,Westport,2,2
+2020,Hot Water,Westwood,6,6
+2020,Hot Water,Weymouth,10,10
+2020,Hot Water,Whately,1,1
+2020,Hot Water,Whitman,2,2
+2020,Hot Water,Wilbraham,10,10
+2020,Hot Water,Williamsburg,1,1
+2020,Hot Water,Williamstown,4,4
+2020,Hot Water,Winchendon,6,6
+2020,Hot Water,Winchester,3,3
+2020,Hot Water,Winthrop,1,1
+2020,Hot Water,Woburn,5,5
+2020,Hot Water,Worcester,20,20
+2020,Hot Water,Wrentham,2,2
+2020,Hot Water,Yarmouth,3,3

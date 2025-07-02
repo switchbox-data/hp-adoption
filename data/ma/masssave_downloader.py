@@ -463,11 +463,8 @@ async def extract_auth_token():
             await browser.close()
 
 
-if __name__ == "__main__":
-    date = datetime.now().strftime("%Y%m%d")
-    outfile = f"masssave_hpinstalls_{date}.csv"
-
-    filter_sets = {
+def download_masssave_data(outfile: str | None, filter_sets: dict[str, list[str]] | None = None) -> pl.DataFrame:
+    filter_sets = filter_sets or {
         "Year": ["2019", "2020", "2021", "2022", "2023"],
         "Displaced_fuel": ["No displacement", "Electric", "Gas", "Oil", "Propane", "Other"],
         "End use": ["Hot Water", "HVAC"],
@@ -498,8 +495,14 @@ if __name__ == "__main__":
             dfs.append(df)
 
     data = pl.concat(dfs).sort(filter_cols).select(*[pl.col(s) for s in filter_cols], pl.all().exclude(filter_cols))
-    data.write_csv(outfile)
+    if outfile:
+        data.write_csv(outfile)
+    return data
 
 
-# TODO: TESTS!
+if __name__ == "__main__":
+    date = datetime.now().strftime("%Y%m%d")
+    outfile = f"masssave_hpinstalls_{date}.csv"
+    download_masssave_data(outfile=outfile)
+
 # TODO: This doesn't *quite* line up with website (see, Yarmouth 2019), but that's maybe a suppression thing?
