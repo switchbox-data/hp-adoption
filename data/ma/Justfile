@@ -1,0 +1,6 @@
+dl-masssave-hpinstall:
+    ./masssave_downloader.py
+
+## TODO: add arguments
+## -token
+## -filters

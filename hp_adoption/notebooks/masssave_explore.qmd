@@ -1,0 +1,141 @@
+---
+jupyter: python3
+title: "MassSave Exploration"
+---
+
+```{python}
+import polars as pl
+import numpy as np
+import re
+import glob
+```
+
+```{python}
+df = pl.read_excel("/workspaces/hp-adoption/local_data/hvac_2023_retrofit_propane.xlsx")
+df = df.select([
+    pl.col(df.columns[0]).alias("municipality"),
+    pl.col(df.columns[1]).alias("installed_hp_accounts"),
+    pl.col(df.columns[2]).alias("installed_hp_locations")
+])
+print(df)
+```
+
+```{python}
+def read_and_clean_masssave_data(file_path):
+    print(file_path)
+    df = pl.read_excel(file_path)
+    df = df.select([
+        pl.col(df.columns[0]).alias("municipality"),
+        pl.col(df.columns[1]).alias("installed_hp_accounts"),
+        pl.col(df.columns[2]).alias("installed_hp_locations")
+    ])
+
+    fileyear = re.search(r'\d{4}', file_path).group(0)
+    displaced_fuel = re.search(r'propane|electric|gas|oil|nodisplacement', file_path).group(0)
+
+    # Get the last row for applied filters check
+    applied_filters = df.tail(1).select("municipality").item().lower().replace("no displacement","nodisplacement")
+
+    # assert that filename matches the filters in the file
+    assert f"year is {fileyear}" in applied_filters, f"Year {fileyear} does not match the year in the filename"
+    assert f"displaced_fuel is {displaced_fuel}" in applied_filters, f"Displaced fuel {displaced_fuel} does not match the displaced fuel in the filename"
+
+    # Drop the last row
+    df = df.head(-1)
+
+    # Replace "*" with null values
+    # Note, do this _after_ removing the null row
+    df = df.with_columns([
+        pl.col("installed_hp_accounts").replace("*", None).cast(pl.Float64, strict=False),
+        pl.col("installed_hp_locations").replace("*", None).cast(pl.Float64, strict=False)
+    ])
+
+    # Add year and displaced_fuel columns
+    df = df.with_columns([
+        pl.lit(fileyear).alias("year"),
+        pl.lit(displaced_fuel).alias("displaced_fuel")
+    ])
+
+
+
+    return df
+
+df = read_and_clean_masssave_data("/workspaces/hp-adoption/local_data/hvac_2022_retrofit_nodisplacement.xlsx")
+print(df)
+```
+
+```{python}
+## show all rows of df that have non-null values
+df.filter(pl.col("installed_hp_locations").is_not_null())
+```
+
+```{python}
+# read all the xlsx files in local_data folder that start with hvac_ using read_and_clean_masssave_data
+# and concatenate them into a single dataframe
+
+# get all the xlsx files in local_data folder that start with hvac_
+files = glob.glob("/workspaces/hp-adoption/local_data/hvac_*.xlsx")
+
+# read and clean each file
+dfs = [read_and_clean_masssave_data(file) for file in files]
+
+# concatenate the dataframes
+df = pl.concat(dfs)
+
+# save the dataframe to a csv file
+df.write_csv("/workspaces/hp-adoption/local_data/masssave_hvac_data.csv")
+```
+
+```{python}
+# Filter for "Total" municipality and pivot to show installed_hp_locations by year and displaced_fuel
+df.filter(pl.col("municipality") == "Total").pivot(
+    values="installed_hp_locations",
+    index="displaced_fuel",
+    columns="year"
+)
+```
+
+```{python}
+# Filter out "Total" municipality, group by year and displaced_fuel, sum installed_hp_locations, then pivot
+df.filter(pl.col("municipality") != "Total").group_by(["year", "displaced_fuel"]).agg(
+    pl.col("installed_hp_locations").sum().alias("installed_hp_locations")
+).pivot(
+    values="installed_hp_locations",
+    index="displaced_fuel",
+    columns="year"
+)
+```
+
+
+### Example usage of code to download data from MassSave
+
+```{python}
+
+from masssave_reader import MassSaveFilter, MassSaveQuery
+
+msq = MassSaveQuery(
+    filters=[MassSaveFilter(column="Heat_pump", values=["Energy efficiency"], operator="In")]
+)
+
+### These expire in O(10s of mins); get fresh one from developer tools tab from a query in
+### https://viewer.dnv.com/macustomerprofile/entity/1444/report/2078
+token = "H4sIAAAAAAAEAB2Ut66EVgBE_-W1WCIsYbHkgrjknC4dOcOSg-V_97P7KY6OZubvHyu5-ynJf_782aA1xuRhUCPMfVn3J87SnGPGg7sg_d6_2idD63BBLc3YPNbwRF-MbzYFDxDUHV2pEUp5sctpnomrlsFdgysaArjJlO9i6QpNuJLwSH0dB0WMY_a5ueBUm8Pyi6eUi38LZn6qaTy782g-PMRmkczvRtpRQdtjYVVLl1Nw-sNMaOnPxrtNCRuvIrprxm31EYGXrdPPXYwGL83fXXmdz8IEsMU_QoqEJSryrHkHsz9ynWvUk1sLzoRmNxmerN8jqSdtdlPi4bUYDc9ejYo2aGuYPLdDGbV6HoXZ7zFiIrztG0rWMFSUh_tEEqXlvmsKF70czos5T3pLCyOJ6QwQgFL0ZQuSchPfzSljDEDsCUQDEtB7QE3TIZredvqvsUB5AGjKU7M3y1lVGyvnZh4cKiuFk_NweEwM_dgm0XRBZZaBqBNYjjDvBT9TtMg-BP9pzDtVpDYsBp4833EaZkK_lr7oB8-M8dpNM-nbj7VLGu7lTobWfulbI8_Yjk-VUmj26J8yVF4QJmol1dmXDTvfgOMZcO591FBIG2--U2xSQMZmlHZM3TOf2ML6uqpqz7-JjFIs5t3MWHJT4j0lKfwYwzfWdMTKfB4jBtJ9x9n57GGNyqJ07QUqJqLSTEJJVnCtIOvnOHcCK10Gl-58OT6eD1jtyJcsTSyMjT2XaTMrlLmbeSu5uEl6C6jChhEEwekJUiWS2RwIJaIygnfmumK054VXCh0vYu2lBBmLBBfAfHtfmxR0umyxb9fRtLOoEyCBZUzScRMk5O2BsG1G5gNJtexESJJvCox4rIaj-fIcuV0Or8jEN84eSMCI78X1R6NzL9rBNAM0ym87r1WqoaCoGdid7D6j-qPc1R3eE3NY0UDUds1ZoIhqJRcP8V1dFW9n_Y0tpxf4-eOHW-7vNqnF_TvHgGik1p8hfAJZK1aRjSYcsM-2Q8uMaxer2Y7TbkJ6KToVFmMTPYfGD-Y2PuEkfR2HjIdlFkvm0f4u2TIxGEJFrwMd8kyLJvI3B1kNMEYYC8W-e0wSuD7WNtQgGm_REQykzYSBpnjS_ARBVmGWLxiVI_6ySRnh2IEcTMFGPTXmKngetkIAZ5L5TviLgx5N2Y1j0icv9w2cDXv15TXMxIAMiEnTw-JVE4HEzJwQlRgZvz5RSJhCWcQWj4blM-ZTF5OD78zaeuY2lCfcqqF019uKhTV3cKb8yPH4RCkPbrJQ4CGz2S2nMqSlxkxNJim17othSMGoDsejlHwqiqgO3U_ByPz113-a729dLHLwa1nfbHGkk1ZZAkz6Zvgng_f8_D_lNtWYbPtS_MaMeTelQP-9uI6t40hbbquoxEd7dYg7RP1gfufU_ggTxQk7zXk3xIsUFWMj-dF-IXOr8u6JWJuTPKY6nHQtlBtbLasOsqIPyg9CcfcnS4fOfm13i79pmqzQR8UXV_G-7dcBrTag8lACge4HJ6ze6KqAQUnVkLXNxEOXqBakx1VCUT5NnCH3691vrX2kYR8FVJ2_dDiEh0N_53nwxLkDohJXVf4dFfqVcw5b6pI8-VdE9uU1pEJXzNT5MRVed2VW5FJf6l585A95Ka4uxAtHbEJ7dMtV1kDbI5mAliCyWvdtkZwCyMNq435fo7kO8I6EYju4_Lpl-v5bQFPIMclH4H06S-1fzf_8CxpVXNWCBgAA.eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly9XQUJJLU5PUlRILUVVUk9QRS1FLVBSSU1BUlktcmVkaXJlY3QuYW5hbHlzaXMud2luZG93cy5uZXQiLCJleHAiOjE3NTA5NTY0ODksInByaXZhdGVMaW5rc0VuYWJsZWQiOnRydWUsImFsbG93QWNjZXNzT3ZlclB1YmxpY0ludGVybmV0Ijp0cnVlfQ=="
+
+data = msq.run_query(token)
+
+print(data)
+```
+
+```{python}
+    import polars as pl
+    data = pl.read_csv("/workspaces/hp-adoption/data/ma/masssave_hpinstalls_20250701.csv")
+    filter_sets = {
+        "Year": ["2019", "2020", "2021", "2022", "2023"],
+        # "Displaced_fuel": ["No displacement", "Electric","Gas","Oil","Propane","Other"],
+        "End use": ["Hot Water", "HVAC"],
+        # "Rate_category": ["Market rate", "Income eligible"],
+    }
+    filter_cols = [s for s in filter_sets.keys()]
+
+    data.sort(filter_cols).select(*[pl.col(s) for s in filter_cols], pl.all().exclude(filter_cols))
+```

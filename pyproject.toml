@@ -5,12 +5,15 @@ description = "This repositary contains code for modeling residential heat pump 
 authors = [{ name = "Switchbox", email = "dk@switch.box" }]
 readme = "README.md"
 keywords = ['python']
-requires-python = ">=3.9,<4.0"
+requires-python = ">=3.10,<4.0"
 dependencies = [
+    "requests>=2.32.3",
+    "attrs>=25.3.0",
     "jupyter>=1.1.1",
     "polars>=1.30.0",
     "seaborn>=0.13.2",
     "pyarrow>=15.0.0",
+    "playwright>=1.53.0",
 ]
 classifiers = [
     "Intended Audience :: Developers",
@@ -31,16 +34,21 @@ Documentation = "https://switchbox-data.github.io/hp-adoption/"
 
 [dependency-groups]
 dev = [
+    "jupyter>=1.0.0",
+    "jupyterlab>=4.0.0",
+    "ipykernel>=6.0.0",
+    "notebook>=7.0.0",
     "pytest>=7.2.0",
     "pre-commit>=2.20.0",
     "tox-uv>=1.11.3",
     "deptry>=0.23.0",
     "mypy>=0.991",
-
+    "pandas-stubs>=2.0.0",
     "ruff>=0.11.5",
     "mkdocs>=1.4.2",
     "mkdocs-material>=8.5.10",
     "mkdocstrings[python]>=0.26.1",
+    "types-requests>=2.32.4",
 ]
 
 [build-system]
